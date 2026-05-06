@@ -1,1 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Personal Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1a2e;
+      --cream: #f5f0e8;
+      --gold: #c9a84c;
+      --rust: #c0392b;
+      --sage: #4a7c59;
+      --muted: #7a7568;
+    }
 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--cream);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: var(--ink);
+      color: var(--cream);
+      padding: 60px 40px 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 320px; height: 320px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      opacity: .18;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: 60px;
+      width: 180px; height: 180px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      opacity: .1;
+    }
+    .header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+      z-index: 1;
+    }
+    .profile-img {
+      width: 130px; height: 130px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .header-text .page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 900;
+      line-height: 1.1;
+    }
+    .header-text .page-title span { color: var(--gold); }
+    .header-text .tagline {
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #a9a49a;
+    }
+
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    section {
+      background: #fff;
+      border: 1px solid #e0d9cc;
+      border-radius: 4px;
+      padding: 32px;
+      position: relative;
+    }
+    section.full-width { grid-column: 1 / -1; }
+
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: var(--gold);
+      border-radius: 4px 0 0 4px;
+    }
+    section:nth-child(2)::before { background: var(--sage); }
+    section:nth-child(3)::before { background: var(--rust); }
+    section:nth-child(4)::before { background: var(--ink); }
+    section:nth-child(5)::before { background: var(--gold); }
+    section:nth-child(6)::before { background: var(--sage); }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+
+    p { font-size: 15px; line-height: 1.75; color: #3a3630; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    ul li {
+      font-size: 15px;
+      color: #3a3630;
+      padding-left: 20px;
+      position: relative;
+    }
+    ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 12px;
+      top: 3px;
+    }
+
+    a {
+      color: var(--sage);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid var(--sage);
+      padding-bottom: 1px;
+    }
+    a:hover { color: var(--rust); border-color: var(--rust); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    thead tr {
+      background-color: var(--ink);
+      color: var(--cream);
+    }
+    thead th {
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 500;
+    }
+    tbody tr { border-bottom: 1px solid #e8e2d7; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:nth-child(even) { background: #faf7f2; }
+    tbody td { padding: 9px 14px; color: #3a3630; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid #e0d9cc;
+    }
+
+    @media (max-width: 600px) {
+      main { grid-template-columns: 1fr; }
+      section.full-width { grid-column: 1; }
+      .header-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <img
+        class="profile-img"
+        src="https://placehold.co/200x200"
+        alt="Profile photo of Alex Morgan"
+      />
+      <div class="header-text">
+        <h1 class="page-title">My Personal <span>Profile</span></h1>
+        <p class="tagline">Student &nbsp;·&nbsp; Learner &nbsp;·&nbsp; Builder</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="full-width">
+      <h2>About Me</h2>
+      <p>
+        Hi, I'm <strong>Alex Morgan</strong> — a curious and motivated student with a passion for
+        technology, creativity, and continuous learning. I enjoy exploring how things work, solving
+        real-world problems, and collaborating with people who share my enthusiasm for making the
+        world a little bit better through knowledge and hard work.
+      </p>
+    </section>
+
+    <section>
+      <h2>My Hobbies</h2>
+      <ul>
+        <li>Reading science fiction novels</li>
+        <li>Coding side projects</li>
+        <li>Photography &amp; photo editing</li>
+        <li>Playing chess online</li>
+        <li>Hiking and nature walks</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Favourite Subjects</h2>
+      <ul>
+        <li>Computer Science</li>
+        <li>Mathematics</li>
+        <li>Physics</li>
+        <li>English Literature</li>
+        <li>History</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>My Favourite Website</h2>
+      <p>
+        I spend a lot of time on
+        <a href="https://www.wikipedia.org" target="_blank" rel="noopener">Wikipedia</a>
+        — it's an incredible free resource where you can explore almost any topic imaginable,
+        from ancient history to cutting-edge science.
+      </p>
+    </section>
+
+    <section>
+      <h2>My Future Goal</h2>
+      <p>
+        My goal is to become a software engineer who builds tools that genuinely help people in
+        their daily lives. I want to study computer science at university, gain hands-on experience
+        through internships, and one day contribute to open-source projects that make technology
+        more accessible to everyone around the world.
+      </p>
+    </section>
+
+    <section class="full-width">
+      <h2>Academic Information</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Grade / Year</th>
+            <th>Score (%)</th>
+            <th>Teacher</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Computer Science</td>
+            <td>Year 11</td>
+            <td>94%</td>
+            <td>Mr. Hassan</td>
+          </tr>
+          <tr>
+            <td>Mathematics</td>
+            <td>Year 11</td>
+            <td>88%</td>
+            <td>Ms. Akhtar</td>
+          </tr>
+          <tr>
+            <td>Physics</td>
+            <td>Year 11</td>
+            <td>85%</td>
+            <td>Mr. Raza</td>
+          </tr>
+          <tr>
+            <td>English Literature</td>
+            <td>Year 11</td>
+            <td>79%</td>
+            <td>Ms. Jamil</td>
+          </tr>
+          <tr>
+            <td>History</td>
+            <td>Year 11</td>
+            <td>82%</td>
+            <td>Mr. Siddiqui</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Alex Morgan &nbsp;|&nbsp; My Personal Profile &nbsp;|&nbsp; Built with HTML</p>
+  </footer>
+
+</body>
+</html>
