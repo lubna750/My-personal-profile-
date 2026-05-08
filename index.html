@@ -2,312 +2,312 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Personal Profile</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alex Khan – Personal Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --ink: #1a1a2e;
-      --cream: #f5f0e8;
-      --gold: #c9a84c;
-      --rust: #c0392b;
-      --sage: #4a7c59;
-      --muted: #7a7568;
+      --blue:   #185FA5;
+      --teal:   #1D9E75;
+      --light:  #f4f7fb;
+      --white:  #ffffff;
+      --text:   #1a1a2e;
+      --muted:  #5f6b7c;
+      --border: #dde3ec;
+      --accent: #5DCAA5;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'DM Sans', sans-serif;
-      background-color: var(--cream);
-      color: var(--ink);
-      min-height: 100vh;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
     }
 
-    header {
-      background-color: var(--ink);
-      color: var(--cream);
-      padding: 60px 40px 50px;
-      position: relative;
-      overflow: hidden;
-    }
-    header::before {
-      content: '';
-      position: absolute;
-      top: -60px; right: -60px;
-      width: 320px; height: 320px;
-      border: 2px solid var(--gold);
-      border-radius: 50%;
-      opacity: .18;
-    }
-    header::after {
-      content: '';
-      position: absolute;
-      bottom: -40px; left: 60px;
-      width: 180px; height: 180px;
-      border: 2px solid var(--gold);
-      border-radius: 50%;
-      opacity: .1;
-    }
-    .header-inner {
-      max-width: 860px;
-      margin: 0 auto;
+    nav {
+      background: var(--blue);
+      padding: 0 2rem;
       display: flex;
       align-items: center;
-      gap: 40px;
-      position: relative;
-      z-index: 1;
+      justify-content: space-between;
+      height: 56px;
     }
-    .profile-img {
-      width: 130px; height: 130px;
-      border-radius: 50%;
-      border: 3px solid var(--gold);
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-    .header-text .page-title {
+    nav .logo {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 5vw, 46px);
-      font-weight: 900;
-      line-height: 1.1;
+      color: #fff;
+      font-size: 20px;
     }
-    .header-text .page-title span { color: var(--gold); }
-    .header-text .tagline {
-      margin-top: 8px;
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul a {
+      color: rgba(255,255,255,.8);
+      text-decoration: none;
       font-size: 14px;
-      font-weight: 300;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #a9a49a;
+    }
+    nav ul a:hover { color: #fff; }
+
+    .hero {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--teal) 100%);
+      padding: 60px 2rem 80px;
+      text-align: center;
+    }
+    .hero-img {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,.8);
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .hero .tagline {
+      font-size: 16px;
+      color: rgba(255,255,255,.85);
+      max-width: 500px;
+      margin: 0 auto 20px;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: rgba(255,255,255,.18);
+      color: #fff;
+      font-size: 13px;
+      padding: 5px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.35);
     }
 
-    main {
-      max-width: 860px;
+    .wrapper {
+      max-width: 900px;
       margin: 0 auto;
-      padding: 48px 24px 80px;
+      padding: 48px 2rem 64px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 28px;
     }
+    .full { grid-column: 1 / -1; }
 
-    section {
-      background: #fff;
-      border: 1px solid #e0d9cc;
-      border-radius: 4px;
-      padding: 32px;
-      position: relative;
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
     }
-    section.full-width { grid-column: 1 / -1; }
-
-    section::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 4px; height: 100%;
-      background: var(--gold);
-      border-radius: 4px 0 0 4px;
-    }
-    section:nth-child(2)::before { background: var(--sage); }
-    section:nth-child(3)::before { background: var(--rust); }
-    section:nth-child(4)::before { background: var(--ink); }
-    section:nth-child(5)::before { background: var(--gold); }
-    section:nth-child(6)::before { background: var(--sage); }
-
-    h2 {
+    .card-title {
       font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      font-weight: 700;
+      font-size: 18px;
+      color: var(--blue);
       margin-bottom: 16px;
-      color: var(--ink);
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
     }
 
-    p { font-size: 15px; line-height: 1.75; color: #3a3630; }
+    .intro p { font-size: 15px; color: var(--muted); }
 
-    ul {
-      list-style: none;
-      padding: 0;
+    .icon-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .icon-list li {
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      font-size: 14.5px;
+    }
+    .icon-list li::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .fav-link-card p { font-size: 14px; color: var(--muted); margin-bottom: 14px; }
+    .fav-link {
+      display: inline-flex;
+      align-items: center;
       gap: 8px;
-    }
-    ul li {
-      font-size: 15px;
-      color: #3a3630;
-      padding-left: 20px;
-      position: relative;
-    }
-    ul li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-      font-size: 12px;
-      top: 3px;
-    }
-
-    a {
-      color: var(--sage);
-      font-weight: 500;
-      text-decoration: none;
-      border-bottom: 1px solid var(--sage);
-      padding-bottom: 1px;
-    }
-    a:hover { color: var(--rust); border-color: var(--rust); }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
+      background: var(--blue);
+      color: #fff;
+      padding: 9px 20px;
+      border-radius: 8px;
       font-size: 14px;
+      text-decoration: none;
     }
-    thead tr {
-      background-color: var(--ink);
-      color: var(--cream);
-    }
-    thead th {
-      padding: 10px 14px;
-      text-align: left;
+    .fav-link:hover { background: #0d4d8a; }
+
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    thead tr { background: var(--blue); color: #fff; }
+    thead th { padding: 10px 14px; text-align: left; font-weight: 500; }
+    tbody tr { border-bottom: 1px solid var(--border); }
+    tbody tr:nth-child(even) { background: #f8fafd; }
+    tbody td { padding: 10px 14px; }
+    .badge-grade {
+      background: #e3f7f0;
+      color: #0d6e52;
+      font-size: 12px;
       font-weight: 500;
+      padding: 2px 10px;
+      border-radius: 999px;
     }
-    tbody tr { border-bottom: 1px solid #e8e2d7; }
-    tbody tr:last-child { border-bottom: none; }
-    tbody tr:nth-child(even) { background: #faf7f2; }
-    tbody td { padding: 9px 14px; color: #3a3630; }
+
+    .goal p {
+      font-size: 15px;
+      color: var(--muted);
+      border-left: 3px solid var(--accent);
+      padding-left: 16px;
+    }
 
     footer {
       text-align: center;
-      padding: 24px;
+      padding: 20px;
       font-size: 13px;
       color: var(--muted);
-      border-top: 1px solid #e0d9cc;
-    }
-
-    @media (max-width: 600px) {
-      main { grid-template-columns: 1fr; }
-      section.full-width { grid-column: 1; }
-      .header-inner { flex-direction: column; text-align: center; }
+      border-top: 1px solid var(--border);
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="header-inner">
-      <img
-        class="profile-img"
-        src="https://placehold.co/200x200"
-        alt="Profile photo of Alex Morgan"
-      />
-      <div class="header-text">
-        <h1 class="page-title">My Personal <span>Profile</span></h1>
-        <p class="tagline">Student &nbsp;·&nbsp; Learner &nbsp;·&nbsp; Builder</p>
-      </div>
-    </div>
-  </header>
+  <nav>
+    <span class="logo">Alex Khan</span>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#hobbies">Hobbies</a></li>
+      <li><a href="#academics">Academics</a></li>
+      <li><a href="#goal">Goal</a></li>
+    </ul>
+  </nav>
 
-  <main>
+  <div class="hero">
+    <img
+      class="hero-img"
+      src="https://api.dicebear.com/7.x/adventurer/svg?seed=Alex&backgroundColor=b6e3f4"
+      alt="Profile photo of Alex Khan"
+    />
+    <h1>Lubna raja </h1>
+    <p class="tagline">Student · Aspiring Software Engineer · Technology Enthusiast</p>
+    <span class="badge">📍Islamabad, Pakistan</span>
+  </div>
 
-    <section class="full-width">
-      <h2>About Me</h2>
+  <div class="wrapper">
+
+    <div class="card intro full" id="about">
+      <span class="card-title">About Me</span>
       <p>
-        Hi, I'm <strong>Alex Morgan</strong> — a curious and motivated student with a passion for
-        technology, creativity, and continuous learning. I enjoy exploring how things work, solving
-        real-world problems, and collaborating with people who share my enthusiasm for making the
-        world a little bit better through knowledge and hard work.
+        Hi! I'm Lubna raja, a passionate and curious student currently studying at COMSATS UNIVERSITY ISLAMABAD . I enjoy exploring the world of technology, solving problems, and constantly
+        learning new things. I believe education is the most powerful tool we have, and I try to
+        make the most of every opportunity to grow — both inside and outside the classroom.
       </p>
-    </section>
+    </div>
 
-    <section>
-      <h2>My Hobbies</h2>
-      <ul>
-        <li>Reading science fiction novels</li>
-        <li>Coding side projects</li>
-        <li>Photography &amp; photo editing</li>
+    <div class="card" id="hobbies">
+      <span class="card-title">My Hobbies</span>
+      <ul class="icon-list">
+        <li>Coding &amp; building small projects</li>
+        <li>Reading science fiction books</li>
         <li>Playing chess online</li>
-        <li>Hiking and nature walks</li>
+        <li>Watching documentaries</li>
+        <li>Cycling around the neighborhood</li>
+        <li>Drawing &amp; digital art</li>
       </ul>
-    </section>
+    </div>
 
-    <section>
-      <h2>Favourite Subjects</h2>
-      <ul>
+    <div class="card">
+      <span class="card-title">Favorite Subjects</span>
+      <ul class="icon-list">
         <li>Computer Science</li>
-        <li>Mathematics</li>
+        <licalculus </li>
         <li>Physics</li>
         <li>English Literature</li>
-        <li>History</li>
+        <li>Urdu</li>
       </ul>
-    </section>
+    </div>
 
-    <section>
-      <h2>My Favourite Website</h2>
+    <div class="card fav-link-card">
+      <span class="card-title">Favorite Website</span>
       <p>
-        I spend a lot of time on
-        <a href="https://www.wikipedia.org" target="_blank" rel="noopener">Wikipedia</a>
-        — it's an incredible free resource where you can explore almost any topic imaginable,
-        from ancient history to cutting-edge science.
+        I love <strong>Khan Academy</strong> — it helps me learn math, science, and programming
+        at my own pace through free, high-quality lessons.
       </p>
-    </section>
+      <a class="fav-link" href="https://www.khanacademy.org" target="_blank" rel="noopener">
+        🔗 Visit Khan Academy
+      </a>
+    </div>
 
-    <section>
-      <h2>My Future Goal</h2>
+    <div class="card" id="academics" style="grid-column: 1 / -1;">
+      <span class="card-title">Academic Information</span>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Class / Year</th>
+              <th>Teacher</th>
+              <th>Grade</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Computer Science</td>
+              <td>Grade 10 – 2024</td>
+              <td>Mr. Asif Raza</td>
+              <td><span class="badge-grade">A+</span></td>
+              <td>Completed</td>
+            </tr>
+            <tr>
+              <td>Mathematics</td>
+              <td>Grade 10 – 2024</td>
+              <td>Ms. Nadia Tariq</td>
+              <td><span class="badge-grade">A</span></td>
+              <td>Completed</td>
+            </tr>
+            <tr>
+              <td>Physics</td>
+              <td>Grade 10 – 2024</td>
+              <td>Mr. Bilal Hassan</td>
+              <td><span class="badge-grade">B+</span></td>
+              <td>Completed</td>
+            </tr>
+            <tr>
+              <td>English</td>
+              <td>Grade 10 – 2024</td>
+              <td>Ms. Sara Ahmed</td>
+              <td><span class="badge-grade">A</span></td>
+              <td>Completed</td>
+            </tr>
+            <tr>
+              <td>Urdu</td>
+              <td>Grade 10 – 2024</td>
+              <td>Mr. Kamran Iqbal</td>
+              <td><span class="badge-grade">A+</span></td>
+              <td>Completed</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card full" id="goal">
+      <span class="card-title">My Future Goal</span>
       <p>
-        My goal is to become a software engineer who builds tools that genuinely help people in
-        their daily lives. I want to study computer science at university, gain hands-on experience
-        through internships, and one day contribute to open-source projects that make technology
-        more accessible to everyone around the world.
+        My dream is to become a software engineer and build technology that makes everyday life
+        easier for people in Pakistan and around the world. I plan to study Computer Science at
+        a top university, and one day start my own
+        technology company. I believe that with hard work, curiosity, and dedication, I can turn
+        this dream into reality — and inspire others from my community to do the same.
       </p>
-    </section>
+    </div>
 
-    <section class="full-width">
-      <h2>Academic Information</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Subject</th>
-            <th>Grade / Year</th>
-            <th>Score (%)</th>
-            <th>Teacher</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Computer Science</td>
-            <td>Year 11</td>
-            <td>94%</td>
-            <td>Mr. Hassan</td>
-          </tr>
-          <tr>
-            <td>Mathematics</td>
-            <td>Year 11</td>
-            <td>88%</td>
-            <td>Ms. Akhtar</td>
-          </tr>
-          <tr>
-            <td>Physics</td>
-            <td>Year 11</td>
-            <td>85%</td>
-            <td>Mr. Raza</td>
-          </tr>
-          <tr>
-            <td>English Literature</td>
-            <td>Year 11</td>
-            <td>79%</td>
-            <td>Ms. Jamil</td>
-          </tr>
-          <tr>
-            <td>History</td>
-            <td>Year 11</td>
-            <td>82%</td>
-            <td>Mr. Siddiqui</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-  </main>
+  </div>
 
   <footer>
-    <p>© 2026 Alex Morgan &nbsp;|&nbsp; My Personal Profile &nbsp;|&nbsp; Built with HTML</p>
+    &copy; 2026 Lubna raja  · Personal Profile · Made with ❤️ in islamabad
   </footer>
 
 </body>
