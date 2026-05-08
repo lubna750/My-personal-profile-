@@ -1,312 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alex Khan – Personal Profile</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --blue:   #185FA5;
-      --teal:   #1D9E75;
-      --light:  #f4f7fb;
-      --white:  #ffffff;
-      --text:   #1a1a2e;
-      --muted:  #5f6b7c;
-      --border: #dde3ec;
-      --accent: #5DCAA5;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--light);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    nav {
-      background: var(--blue);
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 56px;
-    }
-    nav .logo {
-      font-family: 'Playfair Display', serif;
-      color: #fff;
-      font-size: 20px;
-    }
-    nav ul { list-style: none; display: flex; gap: 24px; }
-    nav ul a {
-      color: rgba(255,255,255,.8);
-      text-decoration: none;
-      font-size: 14px;
-    }
-    nav ul a:hover { color: #fff; }
-
-    .hero {
-      background: linear-gradient(135deg, var(--blue) 0%, var(--teal) 100%);
-      padding: 60px 2rem 80px;
-      text-align: center;
-    }
-    .hero-img {
-      width: 120px; height: 120px;
-      border-radius: 50%;
-      border: 4px solid rgba(255,255,255,.8);
-      object-fit: cover;
-      display: block;
-      margin: 0 auto 20px;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      color: #fff;
-      margin-bottom: 8px;
-    }
-    .hero .tagline {
-      font-size: 16px;
-      color: rgba(255,255,255,.85);
-      max-width: 500px;
-      margin: 0 auto 20px;
-    }
-    .hero .badge {
-      display: inline-block;
-      background: rgba(255,255,255,.18);
-      color: #fff;
-      font-size: 13px;
-      padding: 5px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.35);
-    }
-
-    .wrapper {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 48px 2rem 64px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
-    .full { grid-column: 1 / -1; }
-
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px;
-    }
-    .card-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px;
-      color: var(--blue);
-      margin-bottom: 16px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--accent);
-      display: inline-block;
-    }
-
-    .intro p { font-size: 15px; color: var(--muted); }
-
-    .icon-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .icon-list li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14.5px;
-    }
-    .icon-list li::before {
-      content: '';
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-
-    .fav-link-card p { font-size: 14px; color: var(--muted); margin-bottom: 14px; }
-    .fav-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--blue);
-      color: #fff;
-      padding: 9px 20px;
-      border-radius: 8px;
-      font-size: 14px;
-      text-decoration: none;
-    }
-    .fav-link:hover { background: #0d4d8a; }
-
-    .table-wrap { overflow-x: auto; }
-    table { width: 100%; border-collapse: collapse; font-size: 14px; }
-    thead tr { background: var(--blue); color: #fff; }
-    thead th { padding: 10px 14px; text-align: left; font-weight: 500; }
-    tbody tr { border-bottom: 1px solid var(--border); }
-    tbody tr:nth-child(even) { background: #f8fafd; }
-    tbody td { padding: 10px 14px; }
-    .badge-grade {
-      background: #e3f7f0;
-      color: #0d6e52;
-      font-size: 12px;
-      font-weight: 500;
-      padding: 2px 10px;
-      border-radius: 999px;
-    }
-
-    .goal p {
-      font-size: 15px;
-      color: var(--muted);
-      border-left: 3px solid var(--accent);
-      padding-left: 16px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 13px;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-    }
-  </style>
+    <title>My Personal Profile</title>
 </head>
-<body>
-
-  <nav>
-    <span class="logo">Lubna raja </span>
+<body style="background-color: lightblue; font-family: Arial;">
+    <h1 style="color: darkblue;">My Personal Profile</h1>
+    <h2>About Me</h2>
+    <p>Hello! My name is Lubna raja . I am a CSC101 student. I am learning HTML in my computer science lab.</p>
+    <h2>My Hobbies</h2>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#hobbies">Hobbies</a></li>
-      <li><a href="#academics">Academics</a></li>
-      <li><a href="#goal">Goal</a></li>
+        <li>playing free fire </li>
+        <li>Cycling in neighborhood </li>
+        <li>writing fictional novel</li>
+        <li>Learning about programming </li>
     </ul>
-  </na
-    <img
-      class="hero-img"
-      src="https://api.dicebear.com/7.x/adventurer/svg?seed=Alex&backgroundColor=b6e3f4"
-      alt="Profile photo of Alex Khan"
-    />
-    <h1>Lubna raja </h1>
-    <p class="tagline">Student · Aspiring programming </p>
-    <span class="badge">📍Islamabad, Pakistan</span>
-  </div>
-
-  <div class="wrapper">
-
-    <div class="card intro full" id="about">
-      <span class="card-title">About Me</span>
-      <p>
-        Hi! I'm Lubna raja, a passionate and curious student currently studying at COMSATS UNIVERSITY ISLAMABAD . I enjoy exploring the world of technology, solving problems, and constantly
-        learning new things. I believe education is the most powerful tool we have, and I try to
-        make the most of every opportunity to grow — both inside and outside the classroom.
-      </p>
-    </div>
-
-    <div class="card" id="hobbies">
-      <span class="card-title">My Hobbies</span>
-      <ul class="icon-list">
-        <li>Coding &amp; building small projects</li>
-        <li>Reading science fiction books</li>
-        <li>Playing chess online</li>
-        <li>Watching documentaries</li>
-        <li>Cycling around the neighborhood</li>
-        <li>Drawing &amp; digital art</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="card-title">Favorite Subjects</span>
-      <ul class="icon-list">
-        <li>Computer Science</li>
-        <licalculus </li>
-        <li>Physics</li>
-        <li>English Literature</li>
-        <li>Urdu</li>
-      </ul>
-    </div>
-
-    <div class="card fav-link-card">
-      <span class="card-title">Favorite Website</span>
-      <p>
-        I love <strong>Khan Academy</strong> — it helps me learn math, science, and programming
-        at my own pace through free, high-quality lessons.
-      </p>
-      <a class="fav-link" href="https://www.khanacademy.org" target="_blank" rel="noopener">
-        🔗 Visit Khan Academy
-      </a>
-    </div>
-
-    <div class="card" id="academics" style="grid-column: 1 / -1;">
-      <span class="card-title">Academic Information</span>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Subject</th>
-              <th>Class / Year</th>
-              <th>Teacher</th>
-              <th>Grade</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Computer Science</td>
-              <td>Grade 10 – 2024</td>
-              <td>Mr. Asif Raza</td>
-              <td><span class="badge-grade">A+</span></td>
-              <td>Completed</td>
-            </tr>
-            <tr>
-              <td>Mathematics</td>
-              <td>Grade 10 – 2024</td>
-              <td>Ms. Nadia Tariq</td>
-              <td><span class="badge-grade">A</span></td>
-              <td>Completed</td>
-            </tr>
-            <tr>
-              <td>Physics</td>
-              <td>Grade 10 – 2024</td>
-              <td>Mr. Bilal Hassan</td>
-              <td><span class="badge-grade">B+</span></td>
-              <td>Completed</td>
-            </tr>
-            <tr>
-              <td>English</td>
-              <td>Grade 10 – 2024</td>
-              <td>Ms. Sara Ahmed</td>
-              <td><span class="badge-grade">A</span></td>
-              <td>Completed</td>
-            </tr>
-            <tr>
-              <td>Urdu</td>
-              <td>Grade 10 – 2024</td>
-              <td>Mr. Kamran Iqbal</td>
-              <td><span class="badge-grade">A+</span></td>
-              <td>Completed</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="card full" id="goal">
-      <span class="card-title">My Future Goal</span>
-      <p>
-        My dream is to become a software engineer and build technology that makes everyday life
-        easier for people in Pakistan and around the world. I plan to study Computer Science at
+    <h2>My Favorite Subjects</h2>
+    <ol>
+        <li>programming fundamentals </li>
+        <li>calculus </li>
+        <li> functional English</li>
+    </ol>
+    <h2>My Favorite Website</h2>
+    <p>
+        Visit my favorite website:
+        https://www.wikipedia.orgWikipedia</a>
+    </p>
+    <h2>My Picture</h2>
+    https://placehold.co/200x200
+    <h2>My Academic Information</h2>
+    <table border="1">
+        <tr>
+            <th>Field</th>
+            <th>Information</th>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>Lubna raja </td>
+        </tr>
+        <tr>
+            <td>Course</td>
+            <td>CSC101</td>
+        </tr>
+        <tr>
+            <td>Program</td>
+            <td>BS Electronics and Computing </td>
+        </tr>
+        <tr>
+            <td>Semester</td>
+            <td>1st Semester</td>
+        </tr>
+    </table>
+    <h2>My Future Goal</h2>
+    <p>My goal is to become a skilled software developer and build useful applications technology that makes everyday life
+        easier for people in Pakistan and around the world. I plan to study Electronics and computing  at
         a top university, and one day start my own
         technology company. I believe that with hard work, curiosity, and dedication, I can turn
         this dream into reality — and inspire others from my community to do the same.
-      </p>
-    </div>
-
-  </div>
-
-  <footer>
-    &copy; 2026 Lubna raja  · Personal Profile · Made with ❤️ in islamabad
-  </footer>
-
+      </p></p>
 </body>
 </html>
